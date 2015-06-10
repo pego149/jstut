@@ -9,7 +9,7 @@
 function nahodneCislo(min,max)
 {
 	var cislo;
-	cislo=Math.floor(Math.random()*(max-min+1)+min);
+	cislo = Math.floor(Math.random() * (max - min + 1) + min);
 	return cislo;
 }
 
@@ -21,17 +21,17 @@ function nahodneCislo(min,max)
  */
 function generujPole()
 {
-	var velkostX=nahodneCislo(3,10);
-	var velkostY=nahodneCislo(3,10);
+	var velkostX = nahodneCislo(3 , 10);
+	var velkostY = nahodneCislo(3 , 10);
  
-	var pole=[];
+	var pole = [];
 	var cislo;
-	for(var x=1;x<=velkostY;x++)
+	for(var x = 1 ; x <= velkostY ; x++)
 	{
-		var poleNove=[];
-		for(var y=1;y<=velkostX;y++)
+		var poleNove = [];
+		for(var y = 1 ; y <= velkostX ; y++)
 		{
-			cislo=nahodneCislo(1,800);
+			cislo = nahodneCislo(1,800);
 			poleNove.push(cislo);
 		}
 		pole.push(poleNove);     
@@ -48,14 +48,14 @@ function generujPole()
  */
 function sirkaStlpcov(pole)
 {
-	var m=pole.length;
-	var nove=[];
-	var o=0;
-	for(var x=0;x<m;x++)
+	var m = pole.length;
+	var nove = [];
+	var o = 0;
+	for(var x = 0 ; x < m ; x++)
 	{
-		var n=pole[x];
-		var q=n+'';
-		var p=q.length;
+		var n = pole[x];
+		var q = n + '';
+		var p = q.length;
 		nove.push(p);
 	}
 	return nove;
@@ -70,16 +70,16 @@ function sirkaStlpcov(pole)
  */
 function MaxZPola(pole)
 {
-	var m=pole.length;
-	var o=0;
-	for(var x=0;x<m;x++)
+	var m = pole.length;
+	var o = 0;
+	for(var x = 0 ; x < m ; x++)
 	{
-		var n=pole[x];
-		var q=n+'';
-		var p=q.length;
-		if(p>o)
+		var n = pole[x];
+		var q = n+'';
+		var p = q.length;
+		if(p > o)
 		{
-			o=p;
+			o = p;
 		}
 	}
 	return o;
@@ -95,59 +95,59 @@ function MaxZPola(pole)
  */
 function tlacRiadok(pole,max,riadok)
 {
-	p=pole.length;
-	m=max.length;
-	var z=pole[1].length;
+	p = pole.length;
+	m = max.length;
+	var z = pole[1].length;
 	process.stdout.write("|");
-	var n=riadok;
-	var q=n+1+'';
-	var dlzka=q.length;
-	if(p<10)
+	var n = riadok;
+	var q = n + 1 + '';
+	var dlzka = q.length;
+	if(p < 10)
 	{
 		process.stdout.write(" ");
 		process.stdout.write(q);
-		if(dlzka==2)
+		if(dlzka == 2)
 		{
    
 		}
 		else
 		{
-			var medzera=2-dlzka
-			for(var t=0;t<medzera;t++)
+			var medzera = 2 - dlzka
+			for(var t = 0 ; t < medzera ; t++)
 			{
 				process.stdout.write(" ");
 			}
 		}
 	}
-	else if(p>=10&&p<100)
+	else if(p >= 10 && p < 100)
 	{
 		process.stdout.write(" ");
 		process.stdout.write(q);
-		if(dlzka==3)
+		if(dlzka == 3)
 		{
 		
 		}
 		else
 		{
-			var medzera=3-dlzka
-			for(var t=0;t<medzera;t++)
+			var medzera = 3 - dlzka
+			for(var t = 0 ; t < medzera ; t++)
 			{
 				process.stdout.write(" ");
 			}
 		}
 	}
-	else if(p>=100&&p<1000)
+	else if(p >= 100 && p < 1000)
 	{
 		process.stdout.write(" ");
 		process.stdout.write(q);
-		if(dlzka==4)
+		if(dlzka == 4)
 		{
 			
 		}
 		else
 		{
-			var medzera=4-dlzka
-			for(var t=0;t<medzera;t++)
+			var medzera = 4 - dlzka
+			for(var t = 0 ; t < medzera ; t++)
 			{
 				process.stdout.write(" ");
 			}
@@ -157,37 +157,37 @@ function tlacRiadok(pole,max,riadok)
 	{
 		process.stdout.write(" ");
 		process.stdout.write(q);
-		if(dlzka==5)
+		if(dlzka == 5)
 		{
       
 		}
 		else
 		{
-			var medzera=5-dlzka
-			for(var t=0;t<medzera;t++)
+			var medzera = 5 - dlzka
+			for(var t = 0 ; t < medzera ; t++)
 			{
 				process.stdout.write(" ");
 			}
 		}
 	}
 	process.stdout.write("|");
-	for(var y=0;y<z;y++)
+	for(var y = 0 ; y < z ; y++)
 	{
-		var mx=max[y]
-		var n=pole[riadok][y];
-		var q=n+'';
-		var dlzka=q.length;
+		var mx = max[y]
+		var n = pole[riadok][y];
+		var q = n + '';
+		var dlzka = q.length;
     
 		process.stdout.write(" ");
-		if(dlzka==mx)
+		if(dlzka == mx)
 		{
 			process.stdout.write(q);     
 		}
 		else
 		{
 			process.stdout.write(q);
-			var medzera=mx-dlzka
-			for(var t=0;t<medzera;t++)
+			var medzera = mx - dlzka
+			for(var t = 0 ; t < medzera ; t++)
 			{
 				process.stdout.write(" ");
 			}
@@ -209,21 +209,21 @@ function tlacRiadok(pole,max,riadok)
  */
 function tlacPrvyRiadok(pole,max,riadok,original,max2)
 {
-	var p=original.length;
-	var m=max.length
-	var n=riadok;
-	var q=n+'';
-	var dlzka=q.length;
+	var p = original.length;
+	var m = max.length
+	var n = riadok;
+	var q = n + '';
+	var dlzka = q.length;
 	process.stdout.write("|");
-	if(p<10)
+	if(p < 10)
 	{
 		process.stdout.write("   ");
 	}
-	else if(p>=10&&p<100)
+	else if(p >= 10 && p < 100)
 	{
 		process.stdout.write("    ");
 	}
-	else if(p>=100&&p<1000)
+	else if(p >= 100 && p < 1000)
 	{
 		process.stdout.write("     ");
 	}
@@ -232,34 +232,34 @@ function tlacPrvyRiadok(pole,max,riadok,original,max2)
 		process.stdout.write("      ");
 	}
 	process.stdout.write("|");
-	for(var y=0;y<=m;y++)
+	for(var y = 0 ; y <= m ; y++)
 	{
-		var mx=max[y]
-		var n=pole[y];
-		var q=n+'';
-		var dlzka=q.length;
-		if(y==m)
+		var mx = max[y]
+		var n = pole[y];
+		var q = n + '';
+		var dlzka = q.length;
+		if(y == m)
 		{
 			process.stdout.write("|");
-			q=" ";
-			mx=max2;
+			q = " ";
+			mx = max2;
 		}
 		process.stdout.write(" ");
-		if(dlzka==mx)
+		if(dlzka == mx)
 		{
 			process.stdout.write(q);     
 		}
 		else
 		{
 			process.stdout.write(q);
-			var medzera=mx-dlzka
-			for(var t=0;t<medzera;t++)
+			var medzera = mx - dlzka
+			for(var t = 0 ; t < medzera ; t++)
 			{
 				process.stdout.write(" ");
 			}
 		}
 		process.stdout.write(" ");
-		if(y==m)
+		if(y == m)
 		{
 			console.log("|");
 		}
@@ -280,19 +280,19 @@ function tlacPrvyRiadok(pole,max,riadok,original,max2)
  */
 function tlacCiaru(pole,max,max2)
 {
-	var p=pole.length;
-	var m=max.length;
+	var p = pole.length;
+	var m = max.length;
   
 	process.stdout.write("+");
-	if(p<10)
+	if(p < 10)
 	{
 		process.stdout.write("---");
 	}
-	else if(p>=10&&p<100)
+	else if(p >= 10 && p < 100)
 	{
 		process.stdout.write("----");
 	}
-	else if(p>=100&&p<1000)
+	else if(p >= 100 && p < 1000)
 	{
 		process.stdout.write("-----");
 	}
@@ -300,21 +300,21 @@ function tlacCiaru(pole,max,max2)
 	{
 		process.stdout.write("------");
 	}
-	for(var u=0;u<=m;u++)
+	for(var u = 0 ; u <= m ; u++)
 	{
-		var mx=max[u]
+		var mx = max[u]
 		process.stdout.write("+");
-		if(u==m)
+		if(u == m)
 		{
 			process.stdout.write("+");
-			for(var t=-1;t<=max2;t++)
+			for(var t = -1 ; t <= max2 ; t++)
 			{
 				process.stdout.write("-");
 			}
 		}  
 		else
 		{
-			for(var t=-1;t<=mx;t++)
+			for(var t = -1 ; t <= mx ; t++)
 			{
 				process.stdout.write("-");
 			}
@@ -334,21 +334,21 @@ function tlacCiaru(pole,max,max2)
  */
 function tlacSum(pole,max,riadok,original)
 {
-	var p=original.length;
-	var m=max.length
-	var n=riadok;
-	var q=n+'';
-	var dlzka=q.length;
+	var p = original.length;
+	var m = max.length
+	var n = riadok;
+	var q = n + '';
+	var dlzka = q.length;
 	process.stdout.write("|");
-	if(p<10)
+	if(p < 10)
 	{
 		process.stdout.write("   ");
 	}
-	else if(p>=10&&p<100)
+	else if(p >= 10 && p < 100)
 	{
 		process.stdout.write("    ");
 	}
-	else if(p>=100&&p<1000)
+	else if(p >= 100 && p < 1000)
 	{
 		process.stdout.write("     ");
 	}
@@ -357,23 +357,23 @@ function tlacSum(pole,max,riadok,original)
 		process.stdout.write("      ");
 	}
 	process.stdout.write("|");
-	for(var y=0;y<m;y++)
+	for(var y = 0 ; y < m ; y++)
 	{
-		var mx=max[y]
-		var n=pole[y];
-		var q=n+'';
-		var dlzka=q.length;
+		var mx = max[y]
+		var n = pole[y];
+		var q = n + '';
+		var dlzka = q.length;
     
 		process.stdout.write(" ");
-		if(dlzka==mx)
+		if(dlzka == mx)
 		{
 			process.stdout.write(q);     
 		}
 		else
 		{
 			process.stdout.write(q);
-			var medzera=mx-dlzka
-			for(var t=0;t<medzera;t++)
+			var medzera = mx - dlzka
+			for(var t = 0 ; t < medzera ; t++)
 			{
 				process.stdout.write(" ");
 			}
@@ -392,21 +392,21 @@ function tlacSum(pole,max,riadok,original)
  */
 function tlacVysledky(sum,max2)
 {
-	var mx=max2
-	var n=sum;
-	var q=n+'';
-	var dlzka=q.length;
+	var mx = max2
+	var n = sum;
+	var q = n + '';
+	var dlzka = q.length;
     
 	process.stdout.write("| ");
-	if(dlzka==mx)
+	if(dlzka == mx)
 	{
 		process.stdout.write(q);     
 	}
 	else
 	{
 		process.stdout.write(q);
-		var medzera=mx-dlzka
-		for(var t=0;t<medzera;t++)
+		var medzera = mx - dlzka
+		for(var t = 0 ; t < medzera ; t++)
 		{
 			process.stdout.write(" ");
 		}
@@ -423,17 +423,17 @@ function tlacVysledky(sum,max2)
  */
 function scitavacStlpcov(pole)
 {
-	var m=pole.length;
-	var z=pole[1].length;
-	var no=[];
+	var m = pole.length;
+	var z = pole[1].length;
+	var no = [];
   
-	for(var x=0;x<z;x++)
+	for(var x = 0 ; x < z ; x++)
 	{
-		var q=0;
-		for(var y=0;y<m;y++)
+		var q = 0;
+		for(var y = 0 ; y < m ; y++)
 		{
-			var n=pole[y][x];
-			var q=n+q;
+			var n = pole[y][x];
+			var q = n + q;
 		}
 		no.push(q);
 	}
@@ -450,13 +450,13 @@ function scitavacStlpcov(pole)
  */
 function scitavacRiadkov(pole,riadok)
 {
-	var m=pole.length;
-	var z=pole[riadok].length;
-	var q=0;
-	for(var x=0;x<z;x++)
+	var m = pole.length;
+	var z = pole[riadok].length;
+	var q = 0;
+	for(var x = 0 ; x < z ; x++)
 	{
-		var n=pole[riadok][x];
-		var q=n+q;
+		var n = pole[riadok][x];
+		var q = n + q;
 	}
 	return q;
 }
@@ -470,15 +470,15 @@ function scitavacRiadkov(pole,riadok)
  */
 function total(pole)
 {
-	var cislo=0;
-	var dlzka1=pole.length;
-	for(var x=0;x<dlzka1;x++)
+	var cislo = 0;
+	var dlzka1 = pole.length;
+	for(var x = 0 ; x < dlzka1 ; x++)
 	{
-		var dlzka2=pole[1].length;
-		for(var y=0;y<dlzka2;y++)
+		var dlzka2 = pole[1].length;
+		for(var y = 0 ; y < dlzka2 ; y++)
 		{
-			var c=pole[x][y];
-			cislo=cislo+c
+			var c = pole[x][y];
+			cislo = cislo + c
 		}     
 	}
 	return cislo;
@@ -492,26 +492,26 @@ function total(pole)
  */
 function kresliTabulku(pole)
 {
-	var m=pole.length;
+	var m = pole.length;
 	var n;
 	var p;
 	var q;
-	var pismena=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-	var z=pole[1].length;
-	var sumy=scitavacStlpcov(pole);
-	var sirkaStl=sirkaStlpcov(sumy);
-	var e=[]
-	for(var x=0;x<m;x++)
+	var pismena = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+	var z = pole[1].length;
+	var sumy = scitavacStlpcov(pole);
+	var sirkaStl = sirkaStlpcov(sumy);
+	var e = []
+	for(var x = 0 ; x < m ; x++)
 	{
-		e.push(scitavacRiadkov(pole,x));
+		e.push(scitavacRiadkov(pole , x));
 	}
 	e.push(total(pole))
-	var sirkaMax=MaxZPola(e);
+	var sirkaMax = MaxZPola(e);
   
 	tlacCiaru(pole,sirkaStl,sirkaMax);
 	tlacPrvyRiadok(pismena,sirkaStl,0,pole,sirkaMax);
 	tlacCiaru(pole,sirkaStl,sirkaMax);
-	for(var x=0;x<m;x++)
+	for(var x = 0 ; x < m ; x++)
 	{
 		tlacRiadok(pole,sirkaStl,x);
 		tlacVysledky(e[x],sirkaMax);
