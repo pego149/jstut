@@ -45,4 +45,7 @@ function rot13 (sifra)
 	return nova;
 }
 
-console.log(rot13("NUBW FIRG !!!"))
+var povodna="AHOJ SVET!!!"
+var nova=rot13(povodna)
+
+console.log("rot13(): " + povodna + " -> " + nova)
